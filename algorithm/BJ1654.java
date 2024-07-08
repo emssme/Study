@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class BJ1654 {
     // https://www.acmicpc.net/problem/1654
+    // 랜선 자르기
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
