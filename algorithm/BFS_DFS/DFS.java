@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.BFS_DFS;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class DFS {
-        // DFS 함수
-    static void dfs(int start, List<Integer>[] graph, boolean[] visited) {
+    static void dfs(int start, ArrayList<Integer>[] graph, boolean[] visited) {
         Stack<Integer> stack = new Stack<>();
         // 시작 노드를 스택에 추가
         stack.push(start);
@@ -20,7 +19,6 @@ public class DFS {
             if (!visited[node]) {
                 // 노드를 방문 처리
                 visited[node] = true;
-                System.out.print(node + " ");
 
                 // 현재 노드의 인접 노드들을 스택에 추가
                 for (int i = graph[node].size() - 1; i >= 0; i--) {
