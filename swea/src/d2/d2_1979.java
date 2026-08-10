@@ -23,7 +23,7 @@ public class d2_1979 {
 			
 			int answer = 0;
 			
-			// °¡·Î
+			// ê°€ë¡œë±¡í–¥
 			for(int i=0; i<N; i++) {
 				int cnt = 0;
 				for(int j=0; j<N; j++) {
@@ -37,7 +37,7 @@ public class d2_1979 {
 				if(cnt == K) answer ++;
 			}
 			
-			// ¼¼·Î
+			// ì„¸ë¡œë°©í–¥
 			for(int j=0; j<N; j++) {
 				int cnt =0;
 				for(int i=0; i<N; i++) {
