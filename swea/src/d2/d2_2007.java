@@ -15,6 +15,7 @@ public class d2_2007 {
 			for(int i=1; i<10; i++) {
 				 if(str.substring(0, i).equals(str.substring(i, i+i))) {
 					 answer = i;
+					 // 가장 작은 마디에서 멈추도록 break를 추가
 					 break;
 				 }
 			}
