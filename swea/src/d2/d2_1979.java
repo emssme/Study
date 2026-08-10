@@ -37,7 +37,7 @@ public class d2_1979 {
 				if(cnt == K) answer ++;
 			}
 			
-			// 세로
+			// 세로 방향
 			for(int j=0; j<N; j++) {
 				int cnt =0;
 				for(int i=0; i<N; i++) {
