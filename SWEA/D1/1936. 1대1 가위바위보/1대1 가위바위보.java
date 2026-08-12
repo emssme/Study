@@ -36,20 +36,23 @@ class Solution
 {
 	public static void main(String args[]) throws Exception
 	{
-        Scanner sc = new Scanner(System.in);
+
+		Scanner sc = new Scanner(System.in);
+        
         int A = sc.nextInt();
         int B = sc.nextInt();
-        String winner = "";
 
-        if (A == 1 && B == 3) {
-            winner = "A";
-        } else if (A == 2 && B == 1) {
-            winner = "A";
-        } else if (A == 3 && B == 2) {
-            winner = "A";
-        } else {
-            winner = "B";
+        if (A == 1) {
+            if(B == 2) System.out.println("B");
+            if(B == 3) System.out.println("A");
         }
-        System.out.println(winner);
+        if (A == 2) {
+            if(B == 1) System.out.println("A");
+            if(B == 3) System.out.println("B");
+        }
+        if (A == 3) {
+            if(B == 1) System.out.println("B");
+            if(B == 2) System.out.println("A");
+        }
 	}
 }
