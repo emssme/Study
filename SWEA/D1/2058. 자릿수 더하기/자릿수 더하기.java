@@ -36,12 +36,14 @@ class Solution
 {
 	public static void main(String args[]) throws Exception
 	{
-        Scanner sc = new Scanner(System.in);
-        int N = sc.nextInt();
+
+		Scanner sc = new Scanner(System.in);
+		int T =sc.nextInt();
         int sum = 0;
-        while (N > 1 && N < 9999) {
-            sum += N % 10;
-            N /= 10;
+
+        while(T>0) {
+            sum += T %10;
+            T /= 10;
         }
         System.out.println(sum);
 	}
