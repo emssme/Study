@@ -25,6 +25,7 @@ public class d2_1970 {
 			for(int i=0; i<money.length; i++) {
 				System.out.print(money[i] + " ");
 			}
+			System.out.println();
 		}
 	}
 }
