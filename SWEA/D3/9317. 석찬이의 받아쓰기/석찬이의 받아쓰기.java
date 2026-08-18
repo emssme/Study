@@ -11,13 +11,10 @@ public class Solution {
 			String correct = sc.next();
 			String answer = sc.next();
 			
-			String[] correctArr = correct.split("");
-			String[] answerArr = answer.split("");
-			
 			int correctCnt = 0;
 			
 			for(int i=0; i<N; i++) {
-				if(correctArr[i].equals(answerArr[i])) correctCnt++;
+				if(correct.charAt(i) == answer.charAt(i)) correctCnt++;
 			}
 			System.out.println("#" + test_case + " " + correctCnt);
 		}
