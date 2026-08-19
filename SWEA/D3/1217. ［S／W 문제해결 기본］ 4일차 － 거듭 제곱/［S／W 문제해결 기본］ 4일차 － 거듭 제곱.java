@@ -11,9 +11,9 @@ public class Solution {
 			int a = sc.nextInt();
 			int b = sc.nextInt();
 			
-			int answer = a;
+			int answer = 1;
 			
-			for(int i=1; i<b; i++) {
+			for(int i=0; i<b; i++) {
 				answer *= a;
 			}
 			System.out.println("#" + test_case + " " + answer);
