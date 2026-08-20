@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Solution {
@@ -15,17 +16,13 @@ public class Solution {
 			}
 
 			int sum = 0;
-			int max = nums[0];
-			int min = nums[0];
 			int length = nums.length - 2;
 			
-			for(int i=0; i<nums.length; i++) {
-				sum += nums[i];
-				max = Math.max(max, nums[i]);
-				min = Math.min(min, nums[i]);
-			}
+			Arrays.sort(nums);
 			
-			sum = sum - max - min;
+			for(int i=1; i<9; i++) {
+				sum += nums[i];
+			}
 			// 형변환 필요
 			int  answer = (int) Math.round((double) sum / length);
 			
