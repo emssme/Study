@@ -28,7 +28,7 @@ public class Solution {
 				for(int j=0; j<arr.length; j++) {
 					rSum += arr[i][j];
 				}
-				if(rSum > max) max = rSum;
+				max = Math.max(max, rSum);
 			}
 			
 			// 각 열의 합
@@ -38,7 +38,7 @@ public class Solution {
 					cSum += arr[i][j];
 				}
 				
-				if(cSum > max) max = cSum;
+				max = Math.max(max, cSum);
 			}
 			
 			// 대각선의 합
@@ -47,7 +47,7 @@ public class Solution {
 			    dSum += arr[i][i];
 			}
 			
-			if(dSum > max) max = dSum;
+			max = Math.max(max, dSum);
 
 			// 반대 대각선 합
 			int rdSum = 0;
@@ -55,7 +55,7 @@ public class Solution {
 			    rdSum += arr[i][arr.length - 1 - i];
 			}
 			
-			if(rdSum > max) max = rdSum;
+			max = Math.max(max, rdSum);
 			
 			System.out.println("#" + test_case + " " + max);
 		}
