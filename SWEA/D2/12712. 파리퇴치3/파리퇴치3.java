@@ -6,7 +6,7 @@ public class Solution {
 		
 		int T = sc.nextInt();
 		
-		for(int tc = 1; tc <= 10; tc++) {
+		for(int tc = 1; tc <= T; tc++) {
 			int N = sc.nextInt();
 			int M = sc.nextInt();
 			
