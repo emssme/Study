@@ -9,41 +9,39 @@ public class Solution {
 		for(int tc = 1; tc <= 10; tc++) {
 			int T = sc.nextInt();
 			
-			String[] line;
-			String[][] arr = new String[100][];
+			char[][] arr = new char[100][];
 			
 			for(int i=0; i<100; i++) {
-				line = sc.next().split("");
-				
-				arr[i] = new String[line.length];
-				
-				for(int j=0; j<100; j++) {
-					arr[i][j] = line[j];
-				}
+				arr[i] = sc.next().toCharArray();
 			}
+			
 			int max = Integer.MIN_VALUE;
-			int length = 0;
 			
 			// 가로
 			for(int i=0; i<100; i++) {
 				for(int j=0; j<100; j++) {
-					StringBuilder sb = new StringBuilder();
 					
 					for(int k=j; k<100; k++) {
 						
-						sb.append(arr[i][k]);
+						int s = j;	// 시작문자
+						int e = k;	// 마지막 문자
+						boolean pal = true;
 						
-						// 원래 단어
-						String original = sb.toString();
-						// 회문
-						String reverse = new StringBuilder(original).reverse().toString();
-						
-						if(original.equals(reverse) && !original.isEmpty()) {
-							length = original.length();
+						// 시작문자가 마지막문자의 index보다 작을때까지 반복
+						while(s < e) {
+							// 양 끝의 문자가 같은지 비교
+							// 같지 않으면 boolea -> false로 변경하고 종료
+							if(arr[i][s] != arr[i][e]) {
+								pal = false;
+								break;
+							}
+							// 시작문자 index 증가시키고, 마지막문자 index 감소시키면서 문자열 좁혀가
+							s++;
+							e--;
 						}
-						
-						// 최대값 갱신
-						max = Math.max(max, length);
+						if(pal && k - j + 1 > max) {
+							max = Math.max(max, k - j + 1);
+						}
 					}
 				}
 			}
@@ -54,20 +52,27 @@ public class Solution {
 					StringBuilder sb = new StringBuilder();
 					
 					for(int k=i; k<100; k++) {
-						sb.append(arr[k][j]);
+						int s = i;	// 시작문자
+						int e = k;	// 마지막 문자
+						boolean pal = true;
 						
-						String original = sb.toString();
-						String reverse = new StringBuilder(original).reverse().toString();
-						
-						if(original.equals(reverse) && !original.isEmpty()) {
-							length = original.length();
+						// 시작문자가 마지막문자의 index보다 작을때까지 반복
+						while(s < e) {
+							if(arr[s][j] != arr[e][j]) {
+								pal = false;
+								break;
+							}
+							s++;
+							e--;
 						}
-						max = Math.max(max, length);
+						if(pal && k - i + 1 > max) {
+							max = Math.max(max, k - i + 1);
+						}
 					}
 					
 				}
 			}
-			System.out.println("#" + T + " " + max);
+			System.out.println("#" +  + T + " "+ max);
 		}
 	}
 }
